@@ -9,21 +9,19 @@
 }
 #fazer{
 	width:25%;
-	font-size:30px;
 	margin-left:10%;
+	font-family: arial;
 	float:left;
-	background-color:#CCC;
+	background-color:#ff574d;
 }
 #fazendo{
 	width:25%;
-	font-size:30px;
 	margin-left:5%;
 	float:left;
-	background-color:#CCC;
+	background-color:#ffff52;
 }
 #feito{
 	width:25%;
-	font-size:30px;
 	margin-left:5%;
 	float:left;
 	background-color:#CCC;
@@ -31,4 +29,45 @@
 .titulo{
 	text-align:center;
 	background-color:#777;
+	font-size:30px;
+}
+#addfazer{
+	text-align:center;
+	background-color:#EF7771;
+}
+#addfazer:hover{
+	background-color:#F00;
+}
+#addfazendo{
+	text-align:center;
+	background-color:#ffffbf;
+}
+#addfazendo:hover{
+	background-color:#FF0;
+}
+#addfeito{
+	text-align:center;
+	background-color:#777;
+}
+#addfeito:hover{
+	background-color:#0F0;
+}
+.mostrar{
+	display:inline-block;
+	clear:both;
+	width:90%;
+	margin-left:2%;
+	background-color:#FFF;
+	border:1px solid #000;
+}
+.descricao{
+	margin-top:8%;
+	font-size:20px;
+}
+.data{
+	color:green;
+	float:right;
+	border-style: solid;
+  border-width: 1px;
+	border-color:green;
 }
