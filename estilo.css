@@ -63,6 +63,7 @@
 .descricao{
 	margin-top:8%;
 	font-size:20px;
+	width:80%;
 }
 .data{
 	color:green;
@@ -70,4 +71,15 @@
 	border-style: solid;
   border-width: 1px;
 	border-color:green;
+}
+.edit img{
+	width:15px;
+	float:right;
+	margin-top:1px;
+}
+.avanco img{
+	width:15px;
+	float:right;
+	margin-top:25px;
+	margin-right:-12px;
 }

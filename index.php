@@ -3,46 +3,47 @@
 	<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="estilo.css">
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-		<!--Let browser know website is optimized for mobile-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="css/alertify.css">
+		<link rel="stylesheet" href="css/microtip.css">
+		<link rel="stylesheet" href="pace/estilopace.css">
+		<script src="js/alertify.js"></script>
+		<script src="js/js.js"></script>
+		<script src="pace/pace.js"></script>
 	</head>
 	<body>
 		<div id="principal">
-		<div id="fazer">
-			<div class="titulo">
-				A fazer
+			<div id="fazer">
+				<div class="titulo" onclick='mudar1'>
+					A fazer
+				</div>
+				<div id="conteudofazer">				
+				</div>
+				<div id="addfazer">
+					Adicionar tarefa
+				</div>
 			</div>
-			<div id="conteudofazer">				
+			<div id="fazendo">
+				<div class="titulo">
+					Fazendo
+				</div>
+				<div id="conteudofazendo">
+				</div>
+				<div id="addfazendo">
+					Adicionar tarefa
+				</div>
 			</div>
-			<div id="addfazer">
-				Adicionar tarefa
+			<div id="feito">
+				<div class="titulo">
+					Feito
+				</div>
+				<div id="conteudofeito">
+				</div>
+				<div id="addfeito">
+					Adicionar tarefa
+				</div>
 			</div>
+			<div class="pace"></div>
 		</div>
-		<div id="fazendo">
-			<div class="titulo">
-				Fazendo
-			</div>
-			<div id="conteudofazendo">
-			</div>
-			<div id="addfazendo">
-				Adicionar tarefa
-			</div>
-		</div>
-		<div id="feito">
-			<div class="titulo">
-				Feito
-			</div>
-			<div id="conteudofeito">
-			</div>
-			<div id="addfeito">
-				Adicionar tarefa
-			</div>
-		</div>
-	</div>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function (){
@@ -106,6 +107,5 @@
 			});
 			
 		</script>
-		 <script type="text/javascript" src="js/materialize.min.js"></script>
 	</body>
 </html>

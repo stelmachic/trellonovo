@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Abr-2019 às 22:21
+-- Generation Time: 08-Abr-2019 às 22:08
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.10
 
@@ -42,9 +42,9 @@ CREATE TABLE `tarefas` (
 --
 
 INSERT INTO `tarefas` (`id_tarefa`, `descricao`, `data`, `tipo`) VALUES
-(1, 'OIIOIOIO', '2019-04-09', 1),
-(2, 'teste', '2019-04-02', 1),
-(3, 'Fazer trabalho', '2019-04-19', 2);
+(1, 'PI', '2019-04-09', 2),
+(2, 'Fazer PI', '2019-04-02', 3),
+(3, 'Fazer trabalho robson', '2019-04-19', 2);
 
 --
 -- Indexes for dumped tables
