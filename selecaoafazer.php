@@ -7,18 +7,23 @@
 	foreach($mostrar as $mostrando){
 		$id = $mostrando['id_tarefa'];
 		$descricao = $mostrando['descricao'];
-		$data = $mostrando['data'];
+		$data = date('d/m/y',strtotime($mostrando['data']));
 		$tipo = $mostrando['tipo'];
 		echo "
 			<div class='mostrar'>
 				<div class='edit'>
 					<div>
-						<img aria-label='Hey tooltip!' data-microtip-position='up' role='tooltip' onclick='mudar1($id,\"".$descricao."\")' src='img/edit.png'>
+						<div aria-label='Editar!' data-microtip-position='bottom' role='tooltip'><img onclick='mudar1($id,\"".$descricao."\")' src='img/edit.png'></div>
+					</div>
+				</div>
+				<div class='apagar'>
+					<div>
+						<div aria-label='Apagar $descricao!' data-microtip-position='bottom' role='tooltip'><img onclick='apagar1($id,\"".$tipo."\")' src='img/lixo.png'></div>
 					</div>
 				</div>
 				<div class='avanco'>
 					<div>
-						<img onclick='avancar1($id,\"".$tipo."\")' src='img/avanco.png'>
+						<div aria-label='Avançar para Fazendo!' data-microtip-position='bottom' role='tooltip'><img onclick='avancar1($id,\"".$tipo."\")' src='img/avanco.png'></div>
 					</div>
 				</div>
 				<div class='descricao'>
@@ -33,7 +38,7 @@
 				function mudar1(id,descricao){
 				alertify.prompt('Edite sua tarefa.', descricao ,
 			  function(evt, value ){
-				alertify.success('Ok: ' + value);
+				alertify.success('Editado para: ' + value);
 				var digitado = value
 				if(digitado !== ''){
 					var dados = {
@@ -42,11 +47,21 @@
 						
 					};
 						$.post('editar.php', dados,function(retorna){
+							$.ajax({
+								url: 'selecaoafazer.php',
+								success: function(data) {
+									$('#conteudofazer').html(data);
+								},
+								beforeSend: function(){
+								},
+								complete: function(){
+								}
+							})
 						})
 				}
 			  },
 			  function(){
-				alertify.error('Cancel');
+				alertify.error('Cancelado');
 			  })
 			  ;
 			}
@@ -63,12 +78,32 @@
 								
 							};
 								$.post('avancar.php', dados,function(retorna){
-									alert(retorna)
+									$.ajax({
+									url: 'selecaoafazer.php',
+									success: function(data) {
+										$('#conteudofazer').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+									})
+									$.ajax({
+									url: 'selecaofazendo.php',
+									success: function(data) {
+										$('#conteudofazendo').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+										})
+								
 								})
 						}
 					  },
 					  function(){
-						alertify.error('Cancel');
+						alertify.error('Cancelado');
 					  });
 				}
 			</script>

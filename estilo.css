@@ -2,10 +2,16 @@
 	margin:0px;
 	padding:0px;
 }
+body{
+	background-image:url("img/fundo.jpg");
+	background-repeat: no-repeat;
+	background-size:100% 760px;
+}
 #principal{
 	width:100%;
 	display:inline-block;
 	clear:both;
+	
 }
 #fazer{
 	width:25%;
@@ -24,7 +30,7 @@
 	width:25%;
 	margin-left:5%;
 	float:left;
-	background-color:#CCC;
+	background-color:#70DB93;
 }
 .titulo{
 	text-align:center;
@@ -47,7 +53,7 @@
 }
 #addfeito{
 	text-align:center;
-	background-color:#777;
+	background-color:#32CD99;
 }
 #addfeito:hover{
 	background-color:#0F0;
@@ -56,9 +62,11 @@
 	display:inline-block;
 	clear:both;
 	width:90%;
-	margin-left:2%;
-	background-color:#FFF;
+	margin-left:5%;
+	background-color:#E9E3E6;
 	border:1px solid #000;
+	border-radius:2px;
+	color:#000;
 }
 .descricao{
 	margin-top:8%;
@@ -77,9 +85,98 @@
 	float:right;
 	margin-top:1px;
 }
+.apagarr img{
+	width:15px;
+	float:right;
+	margin-top:1px;
+	margin-right:5px;
+	z-index:1;
+}
 .avanco img{
 	width:15px;
 	float:right;
 	margin-top:25px;
+	margin-right:-38px;
+}
+.volta img{
+	width:15px;
+	float:right;
+	margin-top:25px;
+	margin-right:5px;
+}
+.voltar img{
+	width:15px;
+	float:right;
+	margin-top:25px;
 	margin-right:-12px;
+}
+.apagar img{
+	width:15px;
+	float:right;
+	margin-top:25px;
+	margin-right:5px
+}
+.apaga img{
+	width:15px;
+	float:right;
+	margin-top:25px;
+	margin-left:20px;
+	margin-right:-15px;
+}
+.cadastro{
+	text-align:center;
+}
+.modal {
+	font-family:Impact;
+  /* display: none; /* Hidden by default */ 
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #777;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius:8px;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.salvar{
+	border:0;
+	border-radius:2px;
+	background-color:#070;
+	width:50%;
+	height:30px;
+	
+}
+#descricao,#datepicker,#tipo{
+	width: 45%;
+	border-radius: 3px;
+	
+	margin-top: 1%;
+	margin-bottom: 1%;
+	height: 36px;
+	color: #000;
+	border: 0;
+    padding-left: 1%;
 }
