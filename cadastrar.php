@@ -12,7 +12,7 @@
 					Descrição:<br>
 					<input type="text" id="descricao"><br><br>
 					Data:<br>
-					<input type="text" id="datepicker"><br><br>
+					<input type="date" id="datepicker"><br><br>
 					Tipo:<br>
 					<select name="tipo" id="tipo">
 					<option value="1">A fazer</option>
@@ -41,6 +41,7 @@
 				$(".modal").hide();
 				var descricao = $("#descricao").val();
 				  var data = $("#datepicker").val();
+				  alert (data);
 				  var tipo = $("#tipo").val();
 					if(descricao !==''){
 					var dadoss = {

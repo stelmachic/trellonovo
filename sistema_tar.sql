@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Abr-2019 às 22:08
+-- Generation Time: 13-Abr-2019 às 21:17
 -- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.10
+-- versão do PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,9 +42,9 @@ CREATE TABLE `tarefas` (
 --
 
 INSERT INTO `tarefas` (`id_tarefa`, `descricao`, `data`, `tipo`) VALUES
-(1, 'PI', '2019-04-09', 2),
-(2, 'Fazer PI', '2019-04-02', 3),
-(3, 'Fazer trabalho robson', '2019-04-19', 2);
+(3, 'Fazer trabalho', '2019-04-19', 3),
+(9, 'Fazer PI', '2019-04-06', 1),
+(11, 'ProgramaÃ§Ã£o', '2019-04-10', 2);
 
 --
 -- Indexes for dumped tables
@@ -64,7 +64,7 @@ ALTER TABLE `tarefas`
 -- AUTO_INCREMENT for table `tarefas`
 --
 ALTER TABLE `tarefas`
-  MODIFY `id_tarefa` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tarefa` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

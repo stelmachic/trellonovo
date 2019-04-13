@@ -1,5 +1,5 @@
 <?PHP
-	$sql="SELECT * FROM tarefas WHERE tipo = '3' ";
+	$sql="SELECT * FROM tarefas WHERE tipo = '3' ORDER BY data";
 	include ("conexao.php");
 	$mostrar = $conexao -> prepare($sql);
 	$mostrar->execute();
@@ -17,12 +17,12 @@
 				</div>
 				<div class='apaga'>
 					<div>
-						<div aria-label='Apagar $descricao!' data-microtip-position='bottom' role='tooltip'><img onclick='apagar1($id,\"".$tipo."\")' src='img/lixo.png'></div>
+						<div aria-label='Apagar $descricao!' data-microtip-position='bottom' role='tooltip'><img onclick='apagar($id,\"".$descricao."\")' src='img/lixo.png'></div>
 					</div>
 				</div>
 				<div class='voltar'>
 					<div>
-						<div aria-label='Voltar!' data-microtip-position='bottom' role='tooltip'><img  onclick='voltar2($id,\"".$descricao."\")' src='img/voltar.png'></div>
+						<div aria-label='Voltar!' data-microtip-position='bottom' role='tooltip'><img  onclick='voltar3($id,\"".$descricao."\")' src='img/voltar.png'></div>
 					</div>
 				</div>
 				<div class='descricao'>
@@ -63,6 +63,88 @@
 			  })
 			  ;
 			}
+			</script>
+			<script>			
+				function voltar3(id,tipo){
+					alertify.confirm('Deseja Voltar para a Fazendo?',
+					  function(){
+						alertify.success('Movido para Fazendo');
+						if(tipo !== ''){
+							var dados = {
+								tipo:tipo,
+								id:id
+								
+							};
+								$.post('voltar2.php', dados,function(retorna){
+									$.ajax({
+									url: 'selecaofeito.php',
+									success: function(data) {
+										$('#conteudofeito').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+									})
+									$.ajax({
+									url: 'selecaofazendo.php',
+									success: function(data) {
+										$('#conteudofazendo').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+										})
+								
+								})
+						}
+					  },
+					  function(){
+						alertify.error('Cancelado');
+					  });
+				}
+			</script>
+			<script>			
+				function apagar(id,descricao){
+					alertify.confirm('Deseja apagar essa tarefa?',
+					  function(){
+						alertify.success('Tarefa apagada');
+						if(id !== ''){
+							var dados = {
+								descricao:descricao,
+								id:id
+								
+							};
+								$.post('apagar.php', dados,function(retorna){
+									$.ajax({
+									url: 'selecaofeito.php',
+									success: function(data) {
+										$('#conteudofeito').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+									})
+									$.ajax({
+									url: 'selecaofazendo.php',
+									success: function(data) {
+										$('#conteudofazendo').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+										})
+								
+								})
+						}
+					  },
+					  function(){
+						alertify.error('Cancelado');
+					  });
+				}
 			</script>
 		";
 	}

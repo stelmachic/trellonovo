@@ -18,7 +18,7 @@
 				</div>
 				<div class='apagarr'>
 					<div>
-						<div aria-label='Apagar $descricao!' data-microtip-position='bottom' role='tooltip'><img onclick='apagar2($id,\"".$tipo."\")' src='img/lixo.png'></div>
+						<div aria-label='Apagar $descricao!' data-microtip-position='bottom' role='tooltip'><img onclick='apagar($id,\"".$descricao."\")' src='img/lixo.png'></div>
 					</div>
 				</div>
 				<div class='volta'>
@@ -116,14 +116,55 @@
 				function voltar2(id,tipo){
 					alertify.confirm('Deseja Voltar para a Fazer?',
 					  function(){
-						alertify.success('Sim');
+						alertify.success('Movido para a Fazer');
 						if(tipo !== ''){
 							var dados = {
 								tipo:tipo,
 								id:id
 								
 							};
-								$.post('voltar.php', dados,function(retorna){
+								$.post('voltar1.php', dados,function(retorna){
+									$.ajax({
+									url: 'selecaoafazer.php',
+									success: function(data) {
+										$('#conteudofazer').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+									})
+									$.ajax({
+									url: 'selecaofazendo.php',
+									success: function(data) {
+										$('#conteudofazendo').html(data);
+									},
+									beforeSend: function(){
+									},
+									complete: function(){
+									}
+										})
+								
+								})
+						}
+					  },
+					  function(){
+						alertify.error('Cancelado');
+					  });
+				}
+			</script>
+			<script>			
+				function apagar(id,descricao){
+					alertify.confirm('Deseja apagar essa tarefa?',
+					  function(){
+						alertify.success('Tarefa apagada');
+						if(id !== ''){
+							var dados = {
+								descricao:descricao,
+								id:id
+								
+							};
+								$.post('apagar.php', dados,function(retorna){
 									$.ajax({
 									url: 'selecaoafazer.php',
 									success: function(data) {
