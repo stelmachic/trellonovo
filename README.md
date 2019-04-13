@@ -1,2 +1,3 @@
 # trellonovo
-Trello novo
+Sistema parecido com um Trello.
+Criado por Nicholas Stelmach
