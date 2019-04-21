@@ -25,7 +25,7 @@
 						<div aria-label='Voltar!' data-microtip-position='bottom' role='tooltip'><img  onclick='voltar3($id,\"".$descricao."\")' src='img/voltar.png'></div>
 					</div>
 				</div>
-				<div class='descricao'>
+				<div class='descricao' onclick='dif(\"".$descricao."\",\"".$data."\",\"".$data."\")'>
 					$descricao
 				</div>
 				<div class='data'>
@@ -34,7 +34,7 @@
 			</div>
 			<script>
 				function mudar3(id,descricao){
-				alertify.prompt('Edite sua tarefa.', descricao ,
+				alertify.prompt('Editar tarefa','Edite sua tarefa.', descricao ,
 			  function(evt, value ){
 				alertify.success('Editado para: ' + value);
 				var digitado = value
@@ -66,7 +66,7 @@
 			</script>
 			<script>			
 				function voltar3(id,tipo){
-					alertify.confirm('Deseja Voltar para a Fazendo?',
+					alertify.confirm('Voltar para a Fazendo','Deseja Voltar para a Fazendo?',
 					  function(){
 						alertify.success('Movido para Fazendo');
 						if(tipo !== ''){
@@ -107,7 +107,7 @@
 			</script>
 			<script>			
 				function apagar(id,descricao){
-					alertify.confirm('Deseja apagar essa tarefa?',
+					alertify.confirm('Apagar tarefa','Deseja apagar essa tarefa?',
 					  function(){
 						alertify.success('Tarefa apagada');
 						if(id !== ''){
@@ -149,3 +149,39 @@
 		";
 	}
 ?>
+	<script>
+		function dif(desc,data,datacerta){
+			var datacerta = "Data final: " + datacerta
+			var hoje = new Date()
+			var hoje = hoje.getDate()
+			var data = data
+			var hoje = parseInt(hoje)
+			var data = parseInt(data);
+			var diferenca = data - hoje
+			var desc = "Descrição: " + desc
+			if (diferenca < 0){
+				diferenca = 'Prazo atingido';
+			}else {
+				diferenca = diferenca + " dias"
+			}
+			document.getElementById('myModal').style.display = "block";
+			document.getElementById('desc').innerHTML = desc
+			document.getElementById('prazo').innerHTML = diferenca;
+			document.getElementById('data').innerHTML = datacerta;
+
+			
+		}
+		function fechar(){
+		document.getElementById('myModal').style.display = "none";
+		}
+	</script>
+			
+			 <div id="myModal" class="modal" style="display:none;">
+		  <div class="modal-content" style="color:#FFF;font-family:arial;" >
+			<span class="close" onclick="fechar()">&times;</span>
+			<h1>Informacões sobre a tarefa</h1><br><br>
+			<h2 id="desc"></h2><br>
+			<h2 id="prazo"></h2><br>
+			<h3 id="data"></h3>
+		  </div>
+		 </div>

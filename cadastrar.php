@@ -41,7 +41,6 @@
 				$(".modal").hide();
 				var descricao = $("#descricao").val();
 				  var data = $("#datepicker").val();
-				  alert (data);
 				  var tipo = $("#tipo").val();
 					if(descricao !==''){
 					var dadoss = {
